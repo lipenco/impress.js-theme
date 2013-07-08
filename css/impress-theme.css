@@ -191,7 +191,7 @@ li {
   font-size: 1;
 }
 
-li::before {
+ul li::before {
   content: "■";
   width: .75em;
   margin-left: -.75em;
@@ -215,6 +215,7 @@ th {
   padding: 3% 5%;
   vertical-align: top;
 }
+
 
 
 
@@ -363,43 +364,34 @@ th {
     padding: 5% 5% 0 5%;
     line-height: 1.4em;
 }
-.slide li {
-    font-size: 1.2em;
+
+.slide .lead {
+margin-bottom: 2%;
+font-size: 1.2em;
+font-weight: lighter;
 }
 
-.slide ul, .slide ol {
+.slide li {
+    font-size: 1.2em;
+    margin-bottom: 0.6em;
+}
+
+.slide ul {
   list-style: none;
   margin: 5% 0 0 20%;
 }
-
-.slide li {
-  margin-bottom: 0.6em;
-  font-size: 1.2;
+.slide ol {
+  margin: 5% 0 0 20%;
+  list-style-type:decimal;
 }
 
-.slide li::before {
+.slide ul li::before {
   content: "■";
   width: .75em;
   margin-left: -.75em;
   margin-right: 1em;
 }
 
-
-.slide ul, ol {
-  list-style: none;
-  margin-left: 20%;
-}
-
-.slide li {
-  font-size: 1;
-}
-
-.slide li::before {
-  content: "■";
-  width: .75em;
-  margin-left: -.75em;
-  margin-right: 1em;
-}
 
 
 .slide table {
@@ -417,6 +409,8 @@ th {
   padding: 3% 5%;
   vertical-align: top;
 }
+
+
 
 /*
     And now we start to style each step separately.
