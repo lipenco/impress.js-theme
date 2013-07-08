@@ -346,6 +346,18 @@ th {
     padding: 7% 0 3% 0;
 }
 
+.slide h3 {
+    font-size: 1.7em;
+    line-height: 1em;
+    padding: 4% 0 2% 0;
+}
+
+.slide h4 {
+    font-size: 1.3em;
+    line-height: 1em;
+    padding: 3% 0 2% 0;
+}
+
 .slide p {
     font-size: 1em;
     padding: 5% 5% 0 5%;
