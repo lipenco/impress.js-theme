@@ -372,6 +372,40 @@ th {
   margin-right: 1em;
 }
 
+
+.slide ul, ol {
+  list-style: none;
+  margin-left: 20%;
+}
+
+.slide li {
+  font-size: 1;
+}
+
+.slide li::before {
+  content: "■";
+  width: .75em;
+  margin-left: -.75em;
+  margin-right: 1em;
+}
+
+
+.slide table {
+  border-collapse: collapse;
+  font-size: .6em;
+  margin: 10% auto;
+
+}
+.slide th {
+  font-weight: 600;
+  text-align: left;
+}
+.slide td, .slide th {
+  border: 2px solid rgb(142, 148, 145);
+  padding: 3% 5%;
+  vertical-align: top;
+}
+
 /*
     And now we start to style each step separately.
 
