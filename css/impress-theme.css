@@ -101,7 +101,7 @@ i, em { font-style: italic }
 /*
     ... and give links a nice look.
 */
-a, .slide a {
+a {
     color: inherit;
     text-decoration: none;
     padding: 0 0.1em;
@@ -116,8 +116,7 @@ a, .slide a {
     transition:         0.5s;
 }
 
-a:hover, .slide a:hover,
-a:focus, .slide a:focus {
+a:hover, a:focus {
     background: rgba(255,255,255,1);
     text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
 }
@@ -310,6 +309,7 @@ th {
     font-size: 30px;
     line-height: 36px;
     letter-spacing: -1px;
+    z-index: 10000;
 }
 
 .slide q {
@@ -402,6 +402,28 @@ font-weight: lighter;
   border: 2px solid rgb(142, 148, 145);
   padding: 3% 5%;
   vertical-align: top;
+}
+
+
+.slide a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0 0.1em;
+    background: rgba(209,205,205,0.5);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
+    border-radius: 0.2em;
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
+}
+
+.slide a:hover, 
+.slide a:focus {
+    background: rgba(255,255,255,1);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
 }
 
 
