@@ -54,9 +54,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-body {
-    line-height: 1;
-}
 
 blockquote, q {
     quotes: none;
@@ -67,10 +64,6 @@ q:before, q:after {
     content: none;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
 
 /*
     Now here is when interesting things start to appear.
@@ -80,9 +73,9 @@ table {
     want to leave anybody behind.
 */
 body {
+    line-height: 1;
     font-family: 'PT Sans', sans-serif;
     min-height: 740px;
-
     background: rgb(215, 215, 215);
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
     background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
@@ -169,18 +162,6 @@ li:nth-of-type(1) {
     padding-top: 0;
 }
 
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-center {
-  text-align: center;
-}
-
 
 img {
     position: relative;
@@ -195,7 +176,8 @@ img {
 }
 
 
-ul, ol {
+ul, 
+ol {
   list-style: none;
   margin-left: 20%;
 }
@@ -219,10 +201,12 @@ table {
   width: 80%;
 
 }
+
 th {
   font-weight: 600;
   text-align: left;
 }
+
 td,
 th {
   border: 2px solid rgb(142, 148, 145);
@@ -246,26 +230,18 @@ th {
   color: #468858;
 }
 
-.fallback-message {
-    font-family: sans-serif;
-    line-height: 1.3;
-
-    width: 780px;
-    padding: 10px 10px 0;
-    margin: 20px auto;
-
-    border: 1px solid #E4C652;
-    border-radius: 10px;
-    background: #EEDC94;
+.text-left {
+  text-align: left;
 }
 
-.fallback-message p {
-    margin-bottom: 10px;
+.text-right {
+  text-align: right;
 }
 
-.impress-supported .fallback-message {
-    display: none;
+.text-center {
+  text-align: center;
 }
+
 
 /*
     Now let's style the presentation steps.
@@ -454,6 +430,26 @@ font-weight: lighter;
 }
 
 
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
 
 
 
