@@ -169,6 +169,18 @@ li:nth-of-type(1) {
     padding-top: 0;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
 
 img {
     position: relative;
@@ -218,6 +230,21 @@ th {
   vertical-align: top;
 }
 
+.grey {
+  color: #8f8f8f;
+}
+.orange {
+  color: #c99a4a;
+}
+.red{
+  color: #a74240;
+}
+.blue {
+  color: #2d6987;
+}
+.green {
+  color: #468858;
+}
 
 .fallback-message {
     font-family: sans-serif;
