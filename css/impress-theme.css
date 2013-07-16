@@ -112,13 +112,12 @@ p, li{
     
 
 img {
-    position: relative;
     -webkit-box-shadow: 0 2px 0 rgba(255,255,255,.2), inset 0 5px 6px rgba(0,0,0,.6), inset 0 2px 0 rgba(0,0,0,.6);
     -moz-box-shadow: 0 2px 0 rgba(255,255,255,.2), inset 0 5px 6px rgba(0,0,0,.6), inset 0 2px 0 rgba(0,0,0,.6);
     box-shadow: 0 2px 0 rgba(255,255,255,.2), inset 0 5px 6px rgba(0,0,0,.6), inset 0 2px 0 rgba(0,0,0,.6);
     border-radius: 15px;
-    margin: 10% 33% ;
-   
+    margin:auto; 
+    display:block;
 }
 
 ul, 
@@ -128,56 +127,63 @@ ol {
 }
 
 ul {
-  list-style-type: square;
+    list-style-type: square;
 }
 
+ol {
+    list-style-type:decimal;
+}
 
 table {
-  border-collapse: collapse;
-  font-size: .6em;
-  margin: auto;
-  width: 80%;
+    border-collapse: collapse;
+    font-size: .6em;
+    margin: auto;
+    width: 80%;
 
 }
 
 th {
-  font-weight: 600;
-  text-align: left;
+    font-weight: 600;
+    text-align: left;
 }
 
 td,
 th {
-  border: 2px solid rgb(142, 148, 145);
-  padding: 3% 5%;
-  vertical-align: top;
+    border: 2px solid rgb(142, 148, 145);
+    padding: 3% 5%;
+    vertical-align: top;
 }
 
 .grey {
-  color: #8f8f8f;
+    color: #8f8f8f;
 }
+
 .orange {
-  color: #c99a4a;
+    color: #c99a4a;
 }
+
 .red{
-  color: #a74240;
+    color: #a74240;
 }
+
 .blue {
-  color: #2d6987;
+    color: #2d6987;
 }
+
 .green {
-  color: #468858;
+      color: #468858;
 }
 
 .text-left {
-  text-align: left;
+    text-align: left;
 }
 
 .text-right {
-  text-align: right;
+    text-align: right;
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .step {
@@ -214,19 +220,15 @@ th {
 
 .slide {
     display: block;
-
     width: 900px;
     height: 700px;
     padding: 40px 60px;
-
     background-color: white;
     border: 1px solid rgba(0, 0, 0, .3);
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-
     color: rgb(102, 102, 102);
     text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
-
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 30px;
     line-height: 36px;
@@ -238,7 +240,6 @@ th {
     display: block;
     font-size: 50px;
     line-height: 72px;
-
     margin-top: 100px;
 }
 
@@ -249,83 +250,45 @@ th {
 .slide h1 {
     font-size: 3em;
     line-height: 1.2em;
-    padding: 20% 10% 20% 10%;
+    padding: 2em 0.5em;
 }
 
 .slide h2 {
     font-size: 2em;
     line-height: 1em;
-    padding: 7% 0 3% 0;
+    padding: 1em 0.5em;
 }
 
 .slide h3 {
     font-size: 1.7em;
     line-height: 1em;
-    padding: 4% 0 2% 0;
+    padding: 0.7em 0.5em;
 }
 
 .slide h4 {
     font-size: 1.3em;
     line-height: 1em;
-    padding: 3% 0 2% 0;
+    padding: 0.3em 0.5em;
 }
 
-.slide p {
+.slide p, .slide li {
     font-size: 1em;
-    padding: 5% 5% 0 5%;
     line-height: 1.4em;
 }
 
 .slide .lead {
-margin-bottom: 2%;
-font-size: 1.2em;
-font-weight: lighter;
+    font-size: 1.2em;
 }
 
 .lead{
-margin-bottom: .4%;
-font-size: 1em;
-font-weight: lighter;
+    margin-bottom: 1em;
+    font-size: 1em;
+    font-weight: lighter;
 }
-
-.slide li {
-    font-size: 1.2em;
-    margin-bottom: 0.6em;
-}
-
-.slide ul {
-  list-style: none;
-  margin: 5% 0 0 20%;
-}
-.slide ol {
-  margin: 5% 0 0 20%;
-  list-style-type:decimal;
-}
-
-.slide ul li::before {
-  content: "■";
-  width: .75em;
-  margin-left: -.75em;
-  margin-right: 1em;
-}
-
 
 .slide table {
-  font-size: .7em;
-  margin: 10% auto;
-  width: 80%;
-
+    font-size: 0.8em;
 }
-.slide th {
-  font-weight: 600;
-  text-align: left;
-}
-.slide td, .slide th {
-  border: 2px solid rgb(142, 148, 145);
-  padding: 3% 5%;
-  vertical-align: top;
-}
-
 
 .slide a {
     color: inherit;
@@ -351,53 +314,24 @@ font-weight: lighter;
 
 
 .hint {
-    /*
-        We hide the hint until presentation is started and from browsers not supporting
-        impress.js, as they will have a linear scrollable view ...
-    */
     display: none;
-
-    /*
-        ... and give it some fixed position and nice styles.
-    */
     position: fixed;
     left: 0;
     right: 0;
     bottom: 200px;
-
     background: rgba(0,0,0,0.5);
     color: #EEE;
     text-align: center;
-
     font-size: 50px;
     padding: 20px;
-
     z-index: 100;
-
-    /*
-        By default we don't want the hint to be visible, so we make it transparent ...
-    */
     opacity: 0;
-
-    /*
-        ... and position it below the bottom of the screen (relative to it's fixed position)
-    */
     -webkit-transform: translateY(400px);
     -moz-transform:    translateY(400px);
     -ms-transform:     translateY(400px);
     -o-transform:      translateY(400px);
     transform:         translateY(400px);
 
-    /*
-        Now let's imagine that the hint is visible and we want to fade it out and move out
-        of the screen.
-
-        So we define the transition on the opacity property with 1s duration and another
-        transition on transform property delayed by 1s so it will happen after the fade out
-        on opacity finished.
-
-        This way user will not see the hint moving down.
-    */
     -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
     -moz-transition:    opacity 1s,    -moz-transform 0.5s 1s;
     -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
@@ -405,14 +339,9 @@ font-weight: lighter;
     transition:         opacity 1s,         transform 0.5s 1s;
 }
 
-/*
-    Now we 'enable' the hint when presentation is initialized ...
-*/
 .impress-enabled .hint { display: block }
 
-/*
-    ... and we will show it when the first step (with id 'bored') is active.
-*/
+
 .impress-on-bored .hint {
     opacity: 1;
 
