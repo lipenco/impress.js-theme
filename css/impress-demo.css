@@ -54,7 +54,12 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
 blockquote, q {
     quotes: none;
 }
@@ -64,6 +69,10 @@ q:before, q:after {
     content: none;
 }
 
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
 /*
     Now here is when interesting things start to appear.
@@ -73,9 +82,9 @@ q:before, q:after {
     want to leave anybody behind.
 */
 body {
-    line-height: 1;
     font-family: 'PT Sans', sans-serif;
     min-height: 740px;
+
     background: rgb(215, 215, 215);
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
     background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
@@ -109,139 +118,44 @@ a {
     transition:         0.5s;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
     background: rgba(255,255,255,1);
     text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-align: center;
+/*
+    Because the main point behind the impress.js demo is to demo impress.js
+    we display a fallback message for users with browsers that don't support
+    all the features required by it.
+
+    All of the content will be still fully accessible for them, but I want
+    them to know that they are missing something - that's what the demo is
+    about, isn't it?
+
+    And then we hide the message, when support is detected in the browser.
+*/
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
 }
 
-h1 {
-    font-size: 2.5em;
-    font-weight: 600;
-    padding: 10%;
-    
+.fallback-message p {
+    margin-bottom: 10px;
 }
 
-h2 {
-    font-size: 1.5em;
-    padding: 5%;
+.impress-supported .fallback-message {
+    display: none;
 }
-
-h3 {
-    font-size: 1.1em;
-    padding: 5%;
-}
-
-h4 {
-    font-size: 0.9em;
-    padding: 5%;
-}
-
-p {
-    font-size: 0.7em;
-    padding-top: 4%;
-}
-p:nth-of-type(1) {
-     padding-top: 0;
-}
-
-li {
-    font-size: 0.7em;
-    padding-top: 4%;
-}
-
-li:nth-of-type(1) {
-    padding-top: 0;
-}
-
-
-img {
-    position: relative;
-    -webkit-box-shadow: 0 2px 0 rgba(255,255,255,.2), inset 0 5px 6px rgba(0,0,0,.6), inset 0 2px 0 rgba(0,0,0,.6);
-    -moz-box-shadow: 0 2px 0 rgba(255,255,255,.2), inset 0 5px 6px rgba(0,0,0,.6), inset 0 2px 0 rgba(0,0,0,.6);
-    box-shadow: 0 2px 0 rgba(255,255,255,.2), inset 0 5px 6px rgba(0,0,0,.6), inset 0 2px 0 rgba(0,0,0,.6);
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    margin: 10% 33% ;
-   
-}
-
-
-ul, 
-ol {
-  list-style: none;
-  margin-left: 20%;
-}
-
-li {
-  font-size: 1;
-}
-
-ul li::before {
-  content: "■";
-  width: .75em;
-  margin-left: -.75em;
-  margin-right: 1em;
-}
-
-
-table {
-  border-collapse: collapse;
-  font-size: .6em;
-  margin: auto;
-  width: 80%;
-
-}
-
-th {
-  font-weight: 600;
-  text-align: left;
-}
-
-td,
-th {
-  border: 2px solid rgb(142, 148, 145);
-  padding: 3% 5%;
-  vertical-align: top;
-}
-
-.grey {
-  color: #8f8f8f;
-}
-.orange {
-  color: #c99a4a;
-}
-.red{
-  color: #a74240;
-}
-.blue {
-  color: #2d6987;
-}
-.green {
-  color: #468858;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-center {
-  text-align: center;
-}
-
 
 /*
     Now let's style the presentation steps.
@@ -265,7 +179,6 @@ th {
     font-size: 48px;
     line-height: 1.5;
 }
-
 
 /*
     ... and we enhance the styles for impress.js.
@@ -312,7 +225,6 @@ th {
     font-size: 30px;
     line-height: 36px;
     letter-spacing: -1px;
-    z-index: 10000;
 }
 
 .slide q {
@@ -326,132 +238,6 @@ th {
 .slide q strong {
     white-space: nowrap;
 }
-
-.slide h1 {
-    font-size: 3em;
-    line-height: 1.2em;
-    padding: 20% 10% 20% 10%;
-}
-
-.slide h2 {
-    font-size: 2em;
-    line-height: 1em;
-    padding: 7% 0 3% 0;
-}
-
-.slide h3 {
-    font-size: 1.7em;
-    line-height: 1em;
-    padding: 4% 0 2% 0;
-}
-
-.slide h4 {
-    font-size: 1.3em;
-    line-height: 1em;
-    padding: 3% 0 2% 0;
-}
-
-.slide p {
-    font-size: 1em;
-    padding: 5% 5% 0 5%;
-    line-height: 1.4em;
-}
-
-.slide .lead {
-margin-bottom: 2%;
-font-size: 1.2em;
-font-weight: lighter;
-}
-
-.lead{
-margin-bottom: .4%;
-font-size: 1em;
-font-weight: lighter;
-}
-
-.slide li {
-    font-size: 1.2em;
-    margin-bottom: 0.6em;
-}
-
-.slide ul {
-  list-style: none;
-  margin: 5% 0 0 20%;
-}
-.slide ol {
-  margin: 5% 0 0 20%;
-  list-style-type:decimal;
-}
-
-.slide ul li::before {
-  content: "■";
-  width: .75em;
-  margin-left: -.75em;
-  margin-right: 1em;
-}
-
-
-.slide table {
-  font-size: .7em;
-  margin: 10% auto;
-  width: 80%;
-
-}
-.slide th {
-  font-weight: 600;
-  text-align: left;
-}
-.slide td, .slide th {
-  border: 2px solid rgb(142, 148, 145);
-  padding: 3% 5%;
-  vertical-align: top;
-}
-
-
-.slide a {
-    color: inherit;
-    text-decoration: none;
-    padding: 0 0.1em;
-    background: rgba(209,205,205,0.5);
-    text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
-    border-radius: 0.2em;
-    cursor: pointer;
-    -webkit-transition: 0.5s;
-    -moz-transition:    0.5s;
-    -ms-transition:     0.5s;
-    -o-transition:      0.5s;
-    transition:         0.5s;
-}
-
-.slide a:hover, 
-.slide a:focus {
-    background: rgba(209,205,205,0.1);
-    text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
-}
-
-
-.fallback-message {
-    font-family: sans-serif;
-    line-height: 1.3;
-
-    width: 780px;
-    padding: 10px 10px 0;
-    margin: 20px auto;
-
-    border: 1px solid #E4C652;
-    border-radius: 10px;
-    background: #EEDC94;
-}
-
-.fallback-message p {
-    margin-bottom: 10px;
-}
-
-.impress-supported .fallback-message {
-    display: none;
-}
-
-
 
 /*
     And now we start to style each step separately.
@@ -489,11 +275,6 @@ font-weight: lighter;
     -ms-transform:     translateZ(50px);
     -o-transform:      translateZ(50px);
     transform:         translateZ(50px);
-    margin: 0;
-    padding: 0;
-    border: 0;
-    vertical-align: baseline;
-    font-weight: normal;
 }
 
 #title .footnote {
